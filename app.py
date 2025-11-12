@@ -25,10 +25,10 @@ except:
 # ==============================
 def conectar():
     return mysql.connector.connect(
-        host="localhost",
+        host="mysql.railway.internal",
         user="root",
-        password="",
-        database="controle_vendas"
+        password="eQHRNifSfwzpkxdScPyqnQmjYHUywxUb",
+        database="railway"
     )
 
 # ==============================
@@ -269,4 +269,5 @@ else:
         relatorios_page()
     elif menu == "Estatísticas":
         estatisticas_page()
+
 
