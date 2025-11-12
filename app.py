@@ -26,14 +26,18 @@ except:
 # ==============================
 # 🔗 CONEXÃO COM O BANCO
 # ==============================
+import os
+import mysql.connector
+
 def conectar():
     return mysql.connector.connect(
-        host="mysql.railway.internal",
-        user="root",
-        password="eQHRNifSfwzpkxdScPyqnQmjYHUywxUb",
-        database="railway",
-        port=3306
+        host=os.getenv("MYSQLHOST"),
+        user=os.getenv("MYSQLUSER"),
+        password=os.getenv("MYSQLPASSWORD"),
+        database=os.getenv("MYSQLDATABASE"),
+        port=os.getenv("MYSQLPORT")
     )
+
 
 # ==============================
 # 🔒 SISTEMA DE LOGIN SEGURO
@@ -273,6 +277,7 @@ else:
         relatorios_page()
     elif menu == "Estatísticas":
         estatisticas_page()
+
 
 
 
