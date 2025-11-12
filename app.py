@@ -29,6 +29,7 @@ def conectar():
         user="root",
         password="eQHRNifSfwzpkxdScPyqnQmjYHUywxUb",
         database="railway"
+        port=3306
     )
 
 # ==============================
@@ -269,5 +270,6 @@ else:
         relatorios_page()
     elif menu == "Estatísticas":
         estatisticas_page()
+
 
 
