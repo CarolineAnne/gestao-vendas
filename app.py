@@ -13,10 +13,12 @@ import locale
 st.set_page_config(page_title="Gestão de Vendas", layout="wide")
 
 # Define idioma para datas (Windows e Linux)
+import locale
 try:
     locale.setlocale(locale.LC_TIME, "pt_BR.UTF-8")
 except:
-    locale.setlocale(locale.LC_TIME, "Portuguese_Brazil.1252")
+    locale.setlocale(locale.LC_TIME, "")
+
 
 # ==============================
 # 🔗 CONEXÃO COM O BANCO
@@ -267,3 +269,4 @@ else:
         relatorios_page()
     elif menu == "Estatísticas":
         estatisticas_page()
+
