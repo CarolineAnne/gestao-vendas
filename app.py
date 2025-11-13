@@ -50,6 +50,12 @@ def hash_senha(senha):
     """Criptografa a senha com SHA-256."""
     return hashlib.sha256(senha.encode()).hexdigest()
 
+try:
+    con = conectar()
+    st.success("✅ Conexão com o banco realizada com sucesso!")
+    con.close()
+except Exception as e:
+    st.error(f"❌ Erro de conexão: {e}")
 
 def login_page():
     st.title("🔐 Login de Acesso")
@@ -275,6 +281,7 @@ else:
         relatorios_page()
     elif menu == "Estatísticas":
         estatisticas_page()
+
 
 
 
